@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"firebase.google.com/go"
 )
 
 func home(w http.ResponseWriter, r *http.Request) {
