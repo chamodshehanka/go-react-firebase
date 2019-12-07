@@ -25,11 +25,12 @@ import (
 	todo := getTodo()
 	log.Print(todo)
 	result, err := client.Collection("todo").Doc("nxJW8nP7rBWkkmIj0juh").Set(context.Background(), todo)
+	log.Print(todo)
 	if err != nil {
 		log.Fatalln(err)
 	}
 	log.Print(result)
-	log.Print(todo)
+	
 	defer client.Close()
   }
 
