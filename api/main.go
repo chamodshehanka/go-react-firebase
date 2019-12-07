@@ -2,22 +2,41 @@ package main
 
 import (
 	"log"
-	"fmt"
-	"net/http"
+	"context"
+	"firebase.google.com/go"  
+	"google.golang.org/api/option"
+  )
 
-	"github.com/gorilla/mux"
-	"firebase.google.com/go"
-)
+  type Todo struct {
+	  title string
+	  description string
+  }
 
-func home(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte(`{"message": "Hello world"}`))
-}
+  func main() {
 
-func main() {
-	r := mux.NewRouter()
-	r.HandleFunc("/", home)
-	log.Fatal(http.ListenAndServe(":8080", r))
-	fmt.Println("Backed is running")
-}
+	opt := option.WithCredentialsFile("secrets/serviceAccountKey.json")
+	app, err := firebase.NewApp(context.Background(), nil, opt)
+
+	client,err := app.Firestore(context.Background())
+	if err != nil {
+	  log.Fatalln(err)
+	}
+
+	todo := getTodo()
+	log.Print(todo)
+	result, err := client.Collction("todo").Doc("nxJW8nP7rBWkkmIj0juh").Set(context.Background(), todo)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	log.Print(result)
+	defer client.Close()
+  }
+
+  func getTodo() *Todo {
+	todo := Todo{
+		title: "Cat"
+		description: "Meow"
+	}
+
+	return &todo
+  }
