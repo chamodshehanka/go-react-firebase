@@ -12,11 +12,11 @@ const StudentsList = props => {
   });
 
   const switchNameHadler = () => {
-    this.setState({
-      persons: [
-        { id: 1, name: 'Cat', age: 10 },
-        { id: 2, name: 'Shehanka', age: 70 },
-        { id: 3, name: 'Perera', age: 50 }
+    setStudentsState({
+      students: [
+        { id: 1, name: 'Dureksha', degree: 'SE' },
+        { id: 2, name: 'Kaveesha', degree: 'SE' },
+        { id: 3, name: 'Suranga', degree: 'DS' }
       ]
     });
   };
@@ -24,7 +24,12 @@ const StudentsList = props => {
   return (
     <div>
       {studentsState.students.map(e => (
-        <Student key={e.id} name={e.name} degree={e.degree} />
+        <div key={e.id}>
+          <Student key={e.id} name={e.name} degree={e.degree} />
+          <button className='btn btn-success' onClick={switchNameHadler}>
+            Change Name
+          </button>
+        </div>
       ))}
     </div>
   );
