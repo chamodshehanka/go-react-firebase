@@ -22,7 +22,7 @@ class Landing extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         {this.state.persons.map(e => (
           <Person key={e.id} name={e.name} age={e.age} />
         ))}

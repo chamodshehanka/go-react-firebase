@@ -22,7 +22,7 @@ const StudentsList = props => {
   };
 
   return (
-    <div>
+    <div className='container'>
       {studentsState.students.map(e => (
         <div key={e.id}>
           <Student key={e.id} name={e.name} degree={e.degree} />
