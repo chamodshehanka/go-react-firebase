@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Student from './Student';
 
-const StudentsList = props => {
+const StudentsList = () => {
   const [studentsState, setStudentsState] = useState({
     students: [
       { id: 1, name: 'Lavanga', degree: 'Applied Sciences' },
@@ -25,7 +25,12 @@ const StudentsList = props => {
     <div className='container'>
       {studentsState.students.map(e => (
         <div key={e.id}>
-          <Student key={e.id} name={e.name} degree={e.degree} />
+          <Student
+            key={e.id}
+            name={e.name}
+            degree={e.degree}
+            click={switchNameHadler}
+          />
           <button className='btn btn-success' onClick={switchNameHadler}>
             Change Name
           </button>

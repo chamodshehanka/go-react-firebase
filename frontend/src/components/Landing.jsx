@@ -21,6 +21,10 @@ class Landing extends Component {
     });
   };
 
+  onDelete = e => {
+    console.log(e.id);
+  };
+
   render() {
     return (
       <div>
@@ -55,7 +59,7 @@ class Landing extends Component {
 
             <tbody>
               {this.state.persons.map(e => (
-                <Person key={e.id} name={e.name} age={e.age} />
+                <Person key={e.id} name={e.name} age={e.age} onDelete={e.id} />
               ))}
             </tbody>
           </table>
