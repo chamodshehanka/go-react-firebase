@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Person from './Person';
+import NavBar from './landing-page/NavBar';
 
 class Landing extends Component {
   state = {
@@ -22,14 +23,43 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className='container'>
-        {this.state.persons.map(e => (
-          <Person key={e.id} name={e.name} age={e.age} />
-        ))}
+      <div>
+        <NavBar />
+        <div className='container'>
+          <div className='alert alert-primary' role='alert'>
+            <h4 className='alert-heading'>Well done!</h4>
+            <p>
+              Aww yeah, you successfully read this important alert message. This
+              example text is going to run a bit longer so that you can see how
+              spacing within an alert works with this kind of content.
+            </p>
+            <hr />
+            <p className='mb-0'>
+              Whenever you need to, be sure to use margin utilities to keep
+              things nice and tidy.
+              <button className='btn btn-success'>Home</button>
+            </p>
+          </div>
+        </div>
 
-        <button className='btn btn-primary' onClick={this.switchNameHandler}>
-          Switch Name
-        </button>
+        <div className='container'>
+          <table className='table table-hover'>
+            <thead>
+              <tr>
+                <th scope='col'>#ID</th>
+                <th scope='col'>Name</th>
+                <th scope='col'>Age</th>
+                <th scope='col'></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {this.state.persons.map(e => (
+                <Person key={e.id} name={e.name} age={e.age} />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

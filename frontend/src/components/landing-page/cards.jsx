@@ -5,8 +5,22 @@ import Card from './card/card';
 const Cards = () => {
   const [cardState, setCardState] = useState({
     cards: [
-      { id: 1, title: 'Person', subtitle: '', text: '', link: 'persons' },
-      { id: 2, title: 'Student', subtitle: '', text: '', link: 'students' }
+      {
+        id: 1,
+        title: 'Person',
+        subtitle: 'Perosons List with React Classes',
+        text:
+          'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
+        link: 'persons'
+      },
+      {
+        id: 2,
+        title: 'Student',
+        subtitle: 'Students List sfc',
+        text:
+          'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
+        link: 'students'
+      }
     ]
   });
 

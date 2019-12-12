@@ -2,11 +2,15 @@ import React from 'react';
 
 const Person = props => {
   return (
-    <div>
-      <p>
-        I'm {props.name}. I'm {props.age} years old!
-      </p>
-    </div>
+    <tr>
+      <th scope='row'>{props.id}</th>
+      <td>{props.name}</td>
+      <td>{props.age}</td>
+      <td>
+        <button className='btn btn-primary'>Edit</button>{' '}
+        <button className='btn btn-danger'>Delete</button>
+      </td>
+    </tr>
   );
 };
 
