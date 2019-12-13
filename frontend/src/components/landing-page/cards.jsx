@@ -20,6 +20,14 @@ const Cards = () => {
         text:
           'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
         link: 'students'
+      },
+      {
+        id: 3,
+        title: 'Lists',
+        subtitle: 'Rendering Lists & Conditional Content',
+        text:
+          'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
+        link: 'lists'
       }
     ]
   });

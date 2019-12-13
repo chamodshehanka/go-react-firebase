@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import StudentsList from './components/StudentsList';
 import Landing from './components/Landing';
+import ListModule from './components/lists-module/list-module';
 
 ReactDOM.render(
   <Router>
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Route exact path='/' component={App} />
       <Route exact path='/students' component={StudentsList} />
       <Route exact path='/persons' component={Landing} />
+      <Route exact path='/lists' component={ListModule} />
     </div>
   </Router>,
   document.getElementById('root')
