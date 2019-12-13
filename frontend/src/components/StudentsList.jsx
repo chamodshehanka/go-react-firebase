@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Student from './Student';
+import NavBar from './landing-page/NavBar';
 
 const StudentsList = () => {
   const [studentsState, setStudentsState] = useState({
@@ -22,20 +23,23 @@ const StudentsList = () => {
   };
 
   return (
-    <div className='container'>
-      {studentsState.students.map(e => (
-        <div key={e.id}>
-          <Student
-            key={e.id}
-            name={e.name}
-            degree={e.degree}
-            click={switchNameHadler}
-          />
-          <button className='btn btn-success' onClick={switchNameHadler}>
-            Change Name
-          </button>
-        </div>
-      ))}
+    <div>
+      <NavBar />
+      <div className='container'>
+        {studentsState.students.map(e => (
+          <div key={e.id}>
+            <Student
+              key={e.id}
+              name={e.name}
+              degree={e.degree}
+              click={switchNameHadler}
+            />
+            <button className='btn btn-success' onClick={switchNameHadler}>
+              Change Name
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
