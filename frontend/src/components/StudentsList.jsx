@@ -45,10 +45,6 @@ const StudentsList = () => {
     <div>
       <NavBar />
       <div className='container'>
-        <button className='btn btn-success' onClick={switchNameHadler}>
-          Change Name
-        </button>
-
         {' ' /* Inline CSS button */}
         <button style={style}> Incline CSS Button</button>
 
