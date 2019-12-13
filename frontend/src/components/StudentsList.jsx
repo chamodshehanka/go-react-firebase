@@ -33,6 +33,14 @@ const StudentsList = () => {
     });
   };
 
+  const style = {
+    backgroundColor: 'white',
+    font: 'inherit',
+    border: '2px solid blue',
+    padding: '8px',
+    cursor: 'pointer'
+  };
+
   return (
     <div>
       <NavBar />
@@ -40,6 +48,10 @@ const StudentsList = () => {
         <button className='btn btn-success' onClick={switchNameHadler}>
           Change Name
         </button>
+
+        {' ' /* Inline CSS button */}
+        <button style={style}> Incline CSS Button</button>
+
         {studentsState.students.map(e => (
           <div key={e.id}>
             <Student
