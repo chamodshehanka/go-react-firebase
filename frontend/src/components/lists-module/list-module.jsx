@@ -24,7 +24,18 @@ const ListModule = () => {
     });
   };
 
-  const togglePersonsHandler = () => {};
+  const togglePersonsHandler = () => {
+    const doesShow = personState.showPersons;
+    setPersonState({
+      persons: [
+        { id: 1, name: 'Lavanga', degree: 'Applied Sciences' },
+        { id: 2, name: 'Nuwan', degree: 'Applied Sciences' },
+        { id: 3, name: 'Sajeewa', degree: 'Applied Sciences' },
+        { id: 4, name: 'Dureksha', degree: 'SE' }
+      ],
+      showPersons: !doesShow
+    });
+  };
 
   return (
     <div>
@@ -32,7 +43,7 @@ const ListModule = () => {
 
       <p align='center'>
         <button className='btn btn-warning' onClick={togglePersonsHandler}>
-          Switch Name
+          Toggle Persons
         </button>
       </p>
       {/* Ternary expression */}
