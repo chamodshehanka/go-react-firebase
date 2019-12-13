@@ -22,6 +22,17 @@ const StudentsList = () => {
     });
   };
 
+  const nameChangeHandler = event => {
+    setStudentsState({
+      students: [
+        { id: 1, name: 'Dureksha', degree: 'SE' },
+        { id: 2, name: 'Kaveesha', degree: 'SE' },
+        { id: 3, name: 'Suranga', degree: 'DS' },
+        { id: 4, name: event.target.value, degree: 'IT' }
+      ]
+    });
+  };
+
   return (
     <div>
       <NavBar />
@@ -33,6 +44,7 @@ const StudentsList = () => {
               name={e.name}
               degree={e.degree}
               click={switchNameHadler}
+              changed={nameChangeHandler}
             />
             <button className='btn btn-success' onClick={switchNameHadler}>
               Change Name

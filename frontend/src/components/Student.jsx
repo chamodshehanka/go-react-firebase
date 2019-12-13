@@ -6,6 +6,7 @@ const Student = props => {
       <p onClick={props.click}>
         I'm {props.name} I'm studying {props.degree}.
       </p>
+      <input type='text' onChange={props.changed} />
     </div>
   );
 };
