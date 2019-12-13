@@ -37,6 +37,9 @@ const StudentsList = () => {
     <div>
       <NavBar />
       <div className='container'>
+        <button className='btn btn-success' onClick={switchNameHadler}>
+          Change Name
+        </button>
         {studentsState.students.map(e => (
           <div key={e.id}>
             <Student
@@ -46,9 +49,6 @@ const StudentsList = () => {
               click={switchNameHadler}
               changed={nameChangeHandler}
             />
-            <button className='btn btn-success' onClick={switchNameHadler}>
-              Change Name
-            </button>
           </div>
         ))}
       </div>
