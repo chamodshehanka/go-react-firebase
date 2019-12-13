@@ -37,6 +37,16 @@ const ListModule = () => {
     });
   };
 
+  // Delete function
+  const deletePersonHandler = personIndex => {
+    const persons = personState.persons;
+    persons.splice(personIndex, 1);
+    setPersonState({
+      persons: persons,
+      showPersons: true
+    });
+  };
+
   return (
     <div>
       <NavBar />
@@ -49,14 +59,17 @@ const ListModule = () => {
       {/* Ternary expression */}
       {personState.showPersons ? (
         <div>
-          {personState.persons.map(e => (
-            <Person
-              key={e.id}
-              name={e.name}
-              degree={e.degree}
-              changed={nameHandler}
-            />
-          ))}
+          {personState.persons.map((e, i) => {
+            return (
+              <Person
+                key={e.id}
+                name={e.name}
+                degree={e.degree}
+                changed={nameHandler}
+                delete={() => deletePersonHandler(i)}
+              />
+            );
+          })}
         </div>
       ) : null}
     </div>

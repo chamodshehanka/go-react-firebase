@@ -7,6 +7,9 @@ const Person = props => {
       <p onClick={props.click}>
         I'm {props.name} I'm studying {props.degree}.
       </p>
+      <button className='btn btn-danger' onClick={props.delete}>
+        Remove
+      </button>
       {/* Two way binding */}
       <input
         className='form-control'
