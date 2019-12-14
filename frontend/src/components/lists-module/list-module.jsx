@@ -55,6 +55,14 @@ const ListModule = () => {
     });
   };
 
+  const style = {
+    backgroundColor: 'white',
+    font: 'inherit',
+    border: '2px solid blue',
+    padding: '8px',
+    cursor: 'pointer'
+  };
+
   return (
     <div>
       <NavBar />
@@ -62,9 +70,13 @@ const ListModule = () => {
       <p align='center'>
         <button className='btn btn-warning' onClick={togglePersonsHandler}>
           Toggle Persons
-        </button>
+        </button>{' '}
+        <button style={style}>Style Button</button>
       </p>
       {/* Ternary expression */}
+      {personState.showPersons
+        ? (style.backgroundColor = 'red')
+        : (style.backgroundColor = 'green')}
       {personState.showPersons ? (
         <div>
           {personState.persons.map((e, i) => {
