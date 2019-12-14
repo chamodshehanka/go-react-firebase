@@ -13,14 +13,22 @@ const ListModule = () => {
     showPersons: false
   });
 
-  const nameHandler = e => {
+  const nameHandler = (event, index) => {
+    const personIndex = personState.persons.findIndex(p => {
+      return p.id === index;
+    });
+
+    const person = { ...personState.persons[personIndex] };
+
+    // const person = Object.assign({}, personState.persons[personIndex]);
+    person.name = event.target.value;
+
+    const persons = [...personState.persons];
+    persons[personIndex] = person;
+
     setPersonState({
-      persons: [
-        { id: 1, name: 'Lavanga', degree: 'Applied Sciences' },
-        { id: 2, name: 'Nuwan', degree: 'Applied Sciences' },
-        { id: 3, name: 'Sajeewa', degree: 'Applied Sciences' },
-        { id: 4, name: e.target.value, degree: 'SE' }
-      ]
+      persons: persons,
+      showPersons: true
     });
   };
 
@@ -65,7 +73,7 @@ const ListModule = () => {
                 key={e.id}
                 name={e.name}
                 degree={e.degree}
-                changed={nameHandler}
+                changed={event => nameHandler(event, i)}
                 delete={() => deletePersonHandler(i)}
               />
             );
