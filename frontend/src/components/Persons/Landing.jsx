@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Person from './Person';
-import NavBar from './landing-page/NavBar';
+import NavBar from '../../components/landing-page/NavBar';
 
 class Landing extends Component {
   state = {

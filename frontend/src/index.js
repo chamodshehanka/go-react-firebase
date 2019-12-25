@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
-import StudentsList from './components/StudentsList';
-import Landing from './components/Landing';
+import StudentsList from './components/Persons/StudentsList';
+import Landing from './components/Persons/Landing';
 import ListModule from './components/lists-module/list-module';
 
 ReactDOM.render(

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Student from './Student';
-import NavBar from './landing-page/NavBar';
+import NavBar from '../landing-page/NavBar';
 
 const StudentsList = () => {
   const [studentsState, setStudentsState] = useState({
