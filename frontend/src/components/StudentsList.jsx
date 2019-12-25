@@ -38,7 +38,11 @@ const StudentsList = () => {
     font: 'inherit',
     border: '2px solid blue',
     padding: '8px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    ':hover': {
+      backgroundColor: 'lightgreen',
+      color: 'black'
+    }
   };
 
   return (
