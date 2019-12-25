@@ -1,0 +1,20 @@
+{
+  "name": "go-react-firebase",
+  "version": "1.0.0",
+  "description": "Go React Firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shehanka/go-react-firebase.git"
+  },
+  "author": "Chamod Shehanka Perera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shehanka/go-react-firebase/issues"
+  },
+  "homepage": "https://github.com/Shehanka/go-react-firebase#readme"
+}
