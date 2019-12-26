@@ -8,12 +8,7 @@ const Person = props => {
       <td>{props.age}</td>
       <td>
         <button className='btn btn-primary'>Edit</button>{' '}
-        <button
-          className='btn btn-danger'
-          
-        >
-          Delete
-        </button>
+        <button className='btn btn-danger'>Delete</button>
       </td>
     </tr>
   );
